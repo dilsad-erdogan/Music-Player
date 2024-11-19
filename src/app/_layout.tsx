@@ -1,12 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Stack } from 'expo-router';
 import "../../global.css";
 
-export default function App() {
+const App = () => {
   return (
-    <View className='bg-pink-300 flex-1 justify-center items-center'>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <RootNavigation />
+
+      <StatusBar style='auto' />
+    </SafeAreaProvider>
   );
 }
+
+const RootNavigation = () => {
+  return (
+    <Stack>
+      <Stack.Screen name='(tabs)' options={{headerShown: false}} />
+    </Stack>
+  )
+}
+
+export default App;

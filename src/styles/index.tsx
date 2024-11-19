@@ -1,5 +1,6 @@
 import { colors, fontSize } from '../constants/tokens'
 import { StyleSheet } from 'react-native'
+import "expo-router/entry";
 
 export const defaultStyles = StyleSheet.create({
 	container: {
