@@ -1,25 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Stack } from 'expo-router';
-import "../../global.css";
-import "expo-router";
 
 const App = () => {
   return (
     <SafeAreaProvider>
-      <RootNavigation />
-
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
+      </Stack>
       <StatusBar style='auto' />
     </SafeAreaProvider>
   );
-}
-
-const RootNavigation = () => {
-  return (
-    <Stack>
-      <Stack.Screen name='(tabs)' options={{headerShown: false}} />
-    </Stack>
-  )
-}
+};
 
 export default App;
